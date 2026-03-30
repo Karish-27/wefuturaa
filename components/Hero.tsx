@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Beams from './Beams';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,6 +55,20 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#050505] text-[#e1e1e1]">
+      {/* Beams animated background */}
+      <div className="absolute inset-0 z-0">
+        <Beams
+          beamWidth={3}
+          beamHeight={30}
+          beamNumber={20}
+          lightColor="#ffffff"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={30}
+        />
+      </div>
+
       {/* Background Image with effects */}
       <div className="hero-bg absolute inset-0 z-0 opacity-40">
          <img 
