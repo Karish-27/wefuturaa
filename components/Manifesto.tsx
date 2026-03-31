@@ -5,11 +5,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const statements = [
-  "Design is not visual.",
-  "It is a feeling.",
-  "We reject the template.",
-  "Chaos is our grid.",
-  "Building for tomorrow."
+  "Code is the canvas.",
+  "Design is the soul.",
+  "We speak both languages.",
+  "Pixel-perfect. Function-first.",
+  "Where art meets engineering."
 ];
 
 export default function Manifesto() {

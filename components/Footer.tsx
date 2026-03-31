@@ -15,9 +15,9 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/10 pt-16">
           <div className="col-span-1 md:col-span-2">
-            <span className="text-2xl font-[Syne] font-bold block mb-8">Abhay Mallick</span>
+            <span className="text-2xl font-[Syne] font-bold block mb-8">wefuturaa</span>
             <p className="max-w-xs text-gray-500 text-lg leading-relaxed">
-              Full Stack Developer crafting digital experiences with modern technologies. Specializing in React, Node.js, and mobile development.
+              Developer & Designer crafting digital experiences where beautiful design meets precise engineering. Specializing in UI/UX, React, and full-stack development.
             </p>
           </div>
           
@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-32 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
-            <span>© 2026 Abhay Mallick • Chandrapur, Maharashtra</span>
+            <span>© 2026 wefuturaa • Chandrapur, Maharashtra</span>
             <div className="flex gap-8 mt-4 md:mt-0">
                 <a href="#" className="hover:text-white">Privacy Policy</a>
                 <a href="#" className="hover:text-white">Terms of Service</a>
@@ -62,7 +62,7 @@ export default function Footer() {
       
       {/* Giant Background Text */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-5">
-         <h1 className="text-[30vw] leading-[0.7] font-black text-center translate-y-[20%]">ABHAY</h1>
+         <h1 className="text-[30vw] leading-[0.7] font-black text-center translate-y-[20%]">WEFUTURAA</h1>
       </div>
     </footer>
   );

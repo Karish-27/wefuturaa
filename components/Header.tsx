@@ -37,8 +37,8 @@ export default function Header() {
         className="fixed top-0 left-0 w-full z-50 flex justify-between items-center py-6 px-8 mix-blend-difference text-white"
       >
         <a ref={logoRef} href="#" className="text-xl md:text-2xl font-bold font-[Syne] tracking-tight uppercase relative z-50">
-          <span className="md:hidden">AM</span>
-          <span className="hidden md:inline">Abhay Mallick</span>
+          <span className="md:hidden">WF</span>
+          <span className="hidden md:inline">wefuturaa</span>
         </a>
 
         <nav className="hidden md:block">

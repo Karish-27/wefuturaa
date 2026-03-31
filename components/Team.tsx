@@ -5,9 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const team = [
-  { name: "Abhay Mallick", role: "Founder / Developer", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop" },
-  { name: "Sarah J.", role: "Design Lead", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop" },
-  { name: "Davide R.", role: "Tech Director", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop" },
+  { name: "wefuturaa", role: "Developer & Designer", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop" },
+  { name: "Sarah J.", role: "UX Researcher", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop" },
+  { name: "Davide R.", role: "Frontend Engineer", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop" },
 ];
 
 export default function Team() {
@@ -34,8 +34,8 @@ export default function Team() {
     <section ref={sectionRef} className="section-padding bg-[#050505] text-[#e1e1e1]">
       <div className="container">
         <div className="mb-24 text-center">
-          <span className="text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full">The Minds</span>
-          <h2 className="mt-8 text-5xl md:text-7xl">Collective<br/>Consciousness</h2>
+          <span className="text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full">The Craft</span>
+          <h2 className="mt-8 text-5xl md:text-7xl">Design &<br/>Engineering</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
