@@ -6,11 +6,11 @@ import { ArrowUpRight } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-  { id: 1, title: 'Brand Identity', category: 'Strategy', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2000' },
-  { id: 2, title: 'Art Direction', category: 'Design', img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000' },
-  { id: 3, title: 'Film Production', category: 'Content', img: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=2000' },
-  { id: 4, title: 'Immersive Web', category: 'Development', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000' },
-  { id: 5, title: 'Campaigns', category: 'Marketing', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000' },
+  { id: 1, title: 'UI/UX Design', category: 'Design', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2000' },
+  { id: 2, title: 'Brand Identity', category: 'Branding', img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000' },
+  { id: 3, title: 'Web Development', category: 'Engineering', img: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=2000' },
+  { id: 4, title: 'Interactive Interfaces', category: 'Frontend', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000' },
+  { id: 5, title: 'Mobile Apps', category: 'Android / iOS', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000' },
 ];
 
 export default function Services() {
@@ -88,7 +88,7 @@ export default function Services() {
         <div className="flex flex-col md:flex-row justify-between items-start mb-20">
           <h2 className="text-6xl md:text-8xl font-bold mb-8 md:mb-0">Our<br />Expertise</h2>
           <p className="max-w-xs text-sm uppercase tracking-wide text-gray-400 pt-4">
-            Comprehensive design solutions for forward-thinking brands.
+            End-to-end creative and technical services — from concept to code.
           </p>
         </div>
 

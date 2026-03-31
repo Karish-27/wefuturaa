@@ -119,8 +119,8 @@ ul {
 }
 
 .custom-cursor.hovered {
-  width: 80px;
-  height: 80px;
+  width: 36px;
+  height: 36px;
   background-color: white;
   mix-blend-mode: exclusion;
 }

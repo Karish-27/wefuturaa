@@ -41,20 +41,19 @@ export default function Intro() {
         <div className="flex flex-col text-[7vw] md:text-[6vw] leading-[1.1] font-heading uppercase font-bold tracking-tight">
           
           <div className="intro-line-wrap overflow-hidden flex flex-wrap items-baseline gap-4">
-             <span className="char">We</span>
-             <span className="char font-serif italic font-light text-gray-400 lowercase">don't just</span>
-             <span className="char">build</span>
+             <span className="char">Code</span>
+             <span className="char font-serif italic font-light text-gray-400 lowercase">without design</span>
           </div>
 
           <div className="intro-line-wrap overflow-hidden flex flex-wrap items-baseline gap-4 pl-[5vw]">
-             <span className="char stroke-text text-transparent">Digital</span>
-             <span className="char">Experiences.</span>
+             <span className="char stroke-text text-transparent">is</span>
+             <span className="char">Blind.</span>
           </div>
 
           <div className="intro-line-wrap overflow-hidden flex flex-wrap items-baseline gap-4">
-             <span className="char">We</span>
-             <span className="char font-serif italic font-light text-white lowercase">engineer</span>
-             <span className="char">Cults.</span>
+             <span className="char">Design</span>
+             <span className="char font-serif italic font-light text-white lowercase">without code</span>
+             <span className="char">is Mute.</span>
           </div>
 
         </div>
@@ -62,7 +61,7 @@ export default function Intro() {
         <div className="mt-32 w-full flex justify-end">
           <div className="w-full md:w-1/3 text-lg md:text-xl font-light text-gray-400 font-mono leading-relaxed border-l border-gray-800 pl-8">
             <p>
-              In the age of templates, <span className="text-white italic font-serif">chaos is currency</span>. We strip away the non-essential to reveal the raw, beating heart of your brand.
+              We live at the intersection where <span className="text-white italic font-serif">engineering meets aesthetics</span>. Every pixel is intentional. Every function is purposeful. This is what happens when one mind masters both worlds.
             </p>
           </div>
         </div>

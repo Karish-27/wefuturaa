@@ -8,23 +8,23 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     num: "01",
-    title: "Discovery",
-    desc: "We don't start with solutions. We start with questions. We deconstruct your brand to its atomic level, understanding the chaos before we implement the order."
+    title: "Discover",
+    desc: "Every great product starts with the right questions. We research user needs, map out flows, and define the problem space before a single pixel or line of code is touched."
   },
   {
     num: "02",
-    title: "Strategy",
-    desc: "Chaos needs a container. We build the strategic framework that will hold the vision. Positioning, voice, and visual direction are defined here."
+    title: "Design",
+    desc: "Wireframes become interfaces. Interfaces become experiences. We craft pixel-perfect UI, cohesive design systems, and interaction patterns that feel both intuitive and unforgettable."
   },
   {
     num: "03",
-    title: "Execution",
-    desc: "Where the rubber meets the road. We deploy high-fidelity design, motion, and code. No templates. No shortcuts. Just pure craftsmanship."
+    title: "Build",
+    desc: "Design gets its soul in code. We engineer performant, scalable applications with clean architecture — translating every visual decision into a precise, living implementation."
   },
   {
     num: "04",
-    title: "Launch",
-    desc: "The reveal. We manage the deployment, ensure performance across the globe, and hand over the keys to your new digital empire."
+    title: "Ship",
+    desc: "The moment design and code converge into reality. We handle deployment, performance optimization, and cross-platform testing — delivering a product that looks as good as it runs."
   }
 ];
 
@@ -56,7 +56,7 @@ export default function Process() {
             THE<br/>PROCESS
           </h2>
           <p className="max-w-md text-lg mt-8 md:mt-0 font-medium">
-            Our methodology is a blend of rigorous strategy and unbridled creativity.
+            A dual-discipline process — design thinking meets engineering precision at every step.
           </p>
         </div>
 
