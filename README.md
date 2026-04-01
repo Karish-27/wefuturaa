@@ -1,4 +1,4 @@
-# Abhay Mallick - Portfolio
+# WeFuturaa - Crafting Digital Experiences
 
 A modern, animated portfolio website built with React, TypeScript, and GSAP animations featuring smooth scrolling and custom cursor interactions.
 

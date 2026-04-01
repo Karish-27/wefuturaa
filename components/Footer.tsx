@@ -2,13 +2,13 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050505] text-[#e1e1e1] relative overflow-hidden">
+    <footer id="contact" className="bg-[#050505] text-[#e1e1e1] relative overflow-hidden">
       <div className="section-padding container relative z-10">
         
         {/* Call to Action */}
         <div className="mb-32 flex flex-col items-center text-center">
             <h2 className="text-[5vw] leading-none mb-8 font-serif-italic">Have an idea?</h2>
-            <a href="mailto:abhaymallick.dev@gmail.com" className="text-[8vw] md:text-[10vw] font-bold leading-none hover:text-white transition-colors duration-300 stroke-text hover:stroke-0 border-b-2 border-transparent hover:border-white">
+            <a href="mailto:krutikparmar119@gmail.com" className="text-[8vw] md:text-[10vw] font-bold leading-none text-white border-b-2 border-transparent hover:border-white transition-colors duration-300">
                 LET'S TALK
             </a>
         </div>
@@ -36,23 +36,23 @@ export default function Footer() {
              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-8">Connect</h4>
              <ul className="space-y-4 text-gray-400">
               <li>
-                <a href="https://www.linkedin.com/in/abhaymallick2002/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-lg">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/krutikparmar1/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-lg">LinkedIn</a>
               </li>
               <li>
-                <a href="https://github.com/Abhay2204" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-lg">GitHub</a>
+                <a href="https://github.com/Karish-27" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-lg">GitHub</a>
               </li>
               <li>
-                <a href="mailto:abhaymallick.dev@gmail.com" className="hover:text-white transition-colors text-lg">Email</a>
+                <a href="mailto:krutikparmar119@gmail.com" className="hover:text-white transition-colors text-lg">Email</a>
               </li>
               <li>
-                <a href="tel:+918421822204" className="hover:text-white transition-colors text-lg">Phone</a>
+                <a href="tel:+919265542717" className="hover:text-white transition-colors text-lg">Phone</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-32 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
-            <span>© 2026 wefuturaa • Chandrapur, Maharashtra</span>
+            <span>© 2026 wefuturaa • Vadodara, GUjarat</span>
             <div className="flex gap-8 mt-4 md:mt-0">
                 <a href="#" className="hover:text-white">Privacy Policy</a>
                 <a href="#" className="hover:text-white">Terms of Service</a>
