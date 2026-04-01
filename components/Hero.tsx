@@ -149,7 +149,7 @@ export default function Hero() {
                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
              </div>
              <div className="text-xs font-mono uppercase tracking-wider opacity-50">
-               Chandrapur, MH
+               Vadodara, GUJ
              </div>
              <SocialLinks />
            </div>

@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
   const logoRef = useRef<HTMLAnchorElement>(null);
@@ -43,16 +48,19 @@ export default function Header() {
 
         <nav className="hidden md:block">
           <ul ref={linksRef} className="flex space-x-8 text-sm font-medium tracking-wide uppercase">
-            {['Work', 'Services', 'About', 'Blog', 'Contact'].map((item) => (
+            {['Work', 'Services', 'About', 'Contact'].map((item) => (
               <li key={item} className="overflow-hidden group">
-                <a href={`#${item.toLowerCase()}`} className="block relative">
+                <button
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="block relative cursor-none"
+                >
                   <span className="block transition-transform duration-500 group-hover:-translate-y-full">
                     {item}
                   </span>
                   <span className="absolute top-full left-0 block transition-transform duration-500 group-hover:-translate-y-full text-gray-400">
                     {item}
                   </span>
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -74,15 +82,14 @@ export default function Header() {
       <div className={`fixed inset-0 bg-black z-40 md:hidden transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
         <nav className="flex items-center justify-center h-full">
           <ul className="flex flex-col items-center space-y-8 text-2xl font-medium tracking-wide uppercase text-white">
-            {['Work', 'Services', 'About', 'Blog', 'Contact'].map((item, i) => (
+            {['Work', 'Services', 'About', 'Contact'].map((item, i) => (
               <li key={item} className={`transition-all duration-500 delay-${i * 100} ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                <a 
-                  href={`#${item.toLowerCase()}`} 
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-gray-400 transition-colors"
+                <button
+                  onClick={() => { scrollToSection(item.toLowerCase()); setMobileMenuOpen(false); }}
+                  className="hover:text-gray-400 transition-colors cursor-none"
                 >
                   {item}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

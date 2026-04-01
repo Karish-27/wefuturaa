@@ -82,16 +82,21 @@ export default function WorkGallery() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="work" className="relative bg-[#050505] text-white py-24 overflow-hidden">
+    <section ref={sectionRef} id="work" className="relative bg-[#050505] text-white py-24">
+      {/* Full-bleed heading outside container so nothing clips */}
+      <div className="px-[4vw] mb-24 text-center">
+        <p className="text-xs font-mono uppercase tracking-widest text-white/40 mb-6">Portfolio</p>
+        <h2 className="text-[10vw] leading-[0.85] font-heading font-black tracking-tight w-full">
+          SELECTED
+        </h2>
+        <h2
+          className="text-[10vw] leading-[0.85] font-heading font-black tracking-tight w-full"
+          style={{ WebkitTextStroke: '1.5px rgba(255,255,255,0.35)', color: 'transparent' }}
+        >
+          WORKS
+        </h2>
+      </div>
       <div className="container">
-        <div className="mb-24 flex flex-col items-center text-center">
-          <h2 className="text-[12vw] leading-[0.8] font-heading font-black mix-blend-exclusion z-10">
-            SELECTED
-          </h2>
-          <h2 className="text-[12vw] leading-[0.8] font-heading font-black text-transparent stroke-text z-10 -mt-4 md:-mt-10">
-            WORKS
-          </h2>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 px-4 md:px-12">
 
