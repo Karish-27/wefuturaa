@@ -46,7 +46,7 @@ export default function Manifesto() {
   }, []);
 
   return (
-    <section ref={containerRef} className="h-screen bg-[#050505] text-[#e1e1e1] overflow-hidden relative flex items-center justify-center">
+    <section ref={containerRef} className="h-screen bg-[#7D2EE2] text-[#FFFFFF] overflow-hidden relative flex items-center justify-center">
       {/* Background Ambience */}
       <div className="absolute inset-0 opacity-20">
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-white rounded-full blur-[150px] animate-pulse"></div>

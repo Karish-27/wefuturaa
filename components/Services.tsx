@@ -113,7 +113,7 @@ export default function Services() {
   };
 
   return (
-    <section ref={sectionRef} id="services" className="section-padding bg-[#111] text-[#f4f4f4] relative z-10 overflow-hidden">
+    <section ref={sectionRef} id="services" className="section-padding bg-[#7D2EE2] bg-svg-pattern text-[#f4f4f4] relative z-10 overflow-hidden">
 
       {/* Floating hover image */}
       <div
