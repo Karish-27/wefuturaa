@@ -1,8 +1,8 @@
 :root {
   --bg-color: #050505;
-  --text-color: #e1e1e1;
+  --text-color: #FFFFFF;
   --accent-color: #333;
-  --font-heading: 'Syne', sans-serif;
+  --font-heading: 'Geologica', sans-serif;
   --font-body: 'Manrope', sans-serif;
   --font-serif: 'Playfair Display', serif;
 }
@@ -98,6 +98,13 @@ ul {
 
 .section-padding {
   padding: 12vh 0;
+}
+
+.bg-svg-pattern {
+  background-image: url('/image/bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Typography Effects */

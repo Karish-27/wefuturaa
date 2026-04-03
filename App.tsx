@@ -57,7 +57,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-[#050505] text-[#e1e1e1]">
+    <div className="w-full min-h-screen bg-[#050505] text-[#FFFFFF]">
       <div className="noise-overlay"></div>
       <CustomCursor />
       <Header />

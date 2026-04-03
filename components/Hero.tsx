@@ -103,7 +103,7 @@ export default function Hero() {
   const title = "WEFUTURAA";
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#050505] text-[#e1e1e1]">
+    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#050505] text-[#FFFFFF]">
       {/* Beams animated background */}
       <div className="absolute inset-0 z-0">
         <Beams

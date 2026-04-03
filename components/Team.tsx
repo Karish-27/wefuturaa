@@ -50,7 +50,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="section-padding bg-[#050505] text-[#e1e1e1]">
+    <section ref={sectionRef} id="about" className="section-padding bg-[#050505] text-[#]">
       <div className="container">
 
         {/* Label */}

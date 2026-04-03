@@ -35,7 +35,7 @@ export default function Intro() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 md:py-56 bg-[#0a0a0a] text-[#f4f4f4] overflow-hidden px-4">
+    <section ref={sectionRef} className="py-32 md:py-56 bg-[#0a0a0a] bg-svg-pattern text-[#f4f4f4] overflow-hidden px-4">
       <div className="container mx-auto">
         
         <div className="flex flex-col text-[7vw] md:text-[6vw] leading-[1.1] font-heading uppercase font-bold tracking-tight">

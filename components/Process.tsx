@@ -49,7 +49,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-padding bg-[#e1e1e1] text-[#050505]">
+    <section ref={sectionRef} className="section-padding bg-[#ffffff] text-[#050505]">
       <div className="container">
         <div className="flex flex-col md:flex-row mb-24 justify-between items-end">
           <h2 className="text-[10vw] md:text-[8vw] leading-[0.8] tracking-tighter process-title">

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#050505] text-[#e1e1e1] relative overflow-hidden">
+    <footer id="contact" className="bg-[#050505] text-[#ffffff] relative overflow-hidden">
       <div className="section-padding container relative z-10">
         
         {/* Call to Action */}
