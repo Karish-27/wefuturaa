@@ -1,56 +1,114 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Beams from './Beams';
-import { FaGithub, FaLinkedinIn, FaDribbble, FaBehance } from 'react-icons/fa';
+import { FaLinkedinIn, FaDribbble, FaBehance } from 'react-icons/fa';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function SocialLinks() {
-  const [liOpen, setLiOpen] = useState(false);
+  const [linkedinOpen, setLinkedinOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
+
+  const openDropdown = () => {
+    if (buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownPos({
+        top: rect.bottom + 8,
+        right: window.innerWidth - rect.right,
+      });
+    }
+    setLinkedinOpen(true);
+  };
+
+  const toggleDropdown = () => {
+    if (linkedinOpen) setLinkedinOpen(false);
+    else openDropdown();
+  };
+
+  useEffect(() => {
+    if (!linkedinOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (
+        dropdownRef.current && !dropdownRef.current.contains(e.target as Node) &&
+        buttonRef.current && !buttonRef.current.contains(e.target as Node)
+      ) {
+        setLinkedinOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [linkedinOpen]);
+
+  // Portal dropdown — renders into document.body to escape overflow-hidden
+  const dropdown = (
+    <div
+      ref={dropdownRef}
+      role="menu"
+      style={{
+        position: 'fixed',
+        top: dropdownPos.top,
+        right: dropdownPos.right,
+        zIndex: 99999,
+        pointerEvents: 'auto',
+      }}
+      className="min-w-max bg-[#0a0a0a] border border-white/20 rounded-lg p-1 shadow-xl"
+    >
+      <a
+        href="https://www.linkedin.com/in/krutikparmar1/"
+        target="_blank"
+        rel="noopener noreferrer"
+        role="menuitem"
+        onClick={() => setLinkedinOpen(false)}
+        className="block px-3 py-2 text-[10px] font-mono uppercase tracking-wider text-white/80 hover:bg-white hover:text-black rounded whitespace-nowrap cursor-pointer"
+      >
+        Krutik Parmar
+      </a>
+      <a
+        href="https://www.linkedin.com/in/karishma-kumavat-480891241/"
+        target="_blank"
+        rel="noopener noreferrer"
+        role="menuitem"
+        onClick={() => setLinkedinOpen(false)}
+        className="block px-3 py-2 text-[10px] font-mono uppercase tracking-wider text-white/80 hover:bg-white hover:text-black rounded whitespace-nowrap cursor-pointer"
+      >
+        Karishma Kumavat
+      </a>
+    </div>
+  );
 
   return (
-    <div className="flex gap-2 mt-2">
-      {/* Direct links */}
-      <a href="https://github.com/Karish-27" target="_blank" rel="noopener noreferrer"
-        className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors">
-        <FaGithub size={14} />
-      </a>
-
-      {/* LinkedIn — dropdown for two profiles */}
-      <div className="relative" onMouseEnter={() => setLiOpen(true)} onMouseLeave={() => setLiOpen(false)}>
+    <>
+      <div className="flex gap-2 mt-2">
         <button
-          onClick={() => setLiOpen(o => !o)}
-          className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+          ref={buttonRef}
+          type="button"
+          aria-haspopup="menu"
+          aria-expanded={linkedinOpen}
+          aria-label="LinkedIn profiles"
+          onClick={toggleDropdown}
+          className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white/40"
         >
           <FaLinkedinIn size={14} />
         </button>
-        {liOpen && (
-          <div className="absolute top-full right-0 pt-2 z-50">
-            <div className="flex flex-col bg-[#111] border border-white/10 rounded-lg overflow-hidden">
-              <a href="https://www.linkedin.com/in/karishma-kumavat-480891241/" target="_blank" rel="noopener noreferrer"
-                className="px-4 py-2 text-xs font-mono tracking-wider text-white/70 hover:bg-white hover:text-black transition-colors whitespace-nowrap">
-                Karishma
-              </a>
-              <a href="https://www.linkedin.com/in/krutikparmar1/" target="_blank" rel="noopener noreferrer"
-                className="px-4 py-2 text-xs font-mono tracking-wider text-white/70 hover:bg-white hover:text-black transition-colors whitespace-nowrap border-t border-white/10">
-                Krutik
-              </a>
-            </div>
-          </div>
-        )}
+
+        <a href="https://dribbble.com/Krutik_Parmar" target="_blank" rel="noopener noreferrer"
+          className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+          <FaDribbble size={14} />
+        </a>
+
+        <a href="https://www.behance.net/krutikp" target="_blank" rel="noopener noreferrer"
+          className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+          <FaBehance size={14} />
+        </a>
       </div>
 
-      <a href="https://dribbble.com/Krutik_Parmar" target="_blank" rel="noopener noreferrer"
-        className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors">
-        <FaDribbble size={14} />
-      </a>
-
-      <a href="https://www.behance.net/krutikp" target="_blank" rel="noopener noreferrer"
-        className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors">
-        <FaBehance size={14} />
-      </a>
-    </div>
+      {/* Render dropdown outside the overflow-hidden hero section via portal */}
+      {linkedinOpen && createPortal(dropdown, document.body)}
+    </>
   );
 }
 
@@ -143,7 +201,7 @@ export default function Hero() {
                <span className="text-white/60">Code meets Craft</span>
              </div>
            </div>
-           <div className="hidden md:flex text-right flex-col items-end gap-2 md:gap-3">
+           <div className="hidden md:flex text-right flex-col items-end gap-2 md:gap-3" style={{ zIndex: 9999, position: 'relative' }}>
              <div className="flex items-center gap-2">
                <span className="text-xs font-mono uppercase tracking-wider opacity-50">Available for work</span>
                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
