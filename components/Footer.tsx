@@ -1,8 +1,23 @@
-import React from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { FaLinkedinIn, FaDribbble, FaBehance, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 export default function Footer() {
+  const [linkedinOpen, setLinkedinOpen] = useState(false);
+  const linkedinRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!linkedinOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (linkedinRef.current && !linkedinRef.current.contains(e.target as Node)) {
+        setLinkedinOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [linkedinOpen]);
+
   return (
-    <footer id="contact" className="bg-[#050505] text-[#ffffff] relative overflow-hidden">
+    <footer id="contact" className="bg-[#050505] text-[#ffffff] relative overflow-x-hidden">
       <div className="section-padding container relative z-10">
         
         {/* Call to Action */}
@@ -21,34 +36,65 @@ export default function Footer() {
             </p>
           </div>
           
-          <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-8">Sitemap</h4>
-            <ul className="space-y-4 text-gray-400">
-              {['Work', 'Services', 'Agency', 'Careers'].map(item => (
-                <li key={item}>
-                  <a href="#" className="hover:text-white transition-colors text-lg">{item}</a>
-                </li>
+          <div className="col-span-1 md:col-span-2 flex flex-col justify-start">
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-8">Connect</h4>
+            <div className="flex flex-wrap gap-4">
+              <div className="relative" ref={linkedinRef}>
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded={linkedinOpen}
+                  aria-label="LinkedIn profiles"
+                  onClick={() => setLinkedinOpen((o) => !o)}
+                  className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:bg-white hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/40"
+                >
+                  <FaLinkedinIn size={22} />
+                </button>
+                {linkedinOpen && (
+                  <div className="absolute left-0 top-full mt-2 min-w-max z-50">
+                    <div className="bg-[#0a0a0a] border border-white/20 rounded-lg p-1 shadow-lg">
+                      <a
+                        href="https://www.linkedin.com/in/krutikparmar1/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setLinkedinOpen(false)}
+                        className="block px-4 py-2 text-xs font-mono uppercase tracking-wider text-white/80 hover:bg-white hover:text-black rounded whitespace-nowrap"
+                      >
+                        Krutik Parmar
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/karishma-kumavat-480891241/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setLinkedinOpen(false)}
+                        className="block px-4 py-2 text-xs font-mono uppercase tracking-wider text-white/80 hover:bg-white hover:text-black rounded whitespace-nowrap"
+                      >
+                        Karishma Kumavat
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
+              {[
+                { icon: <FaDribbble size={22} />, href: 'https://dribbble.com/Krutik_Parmar', label: 'Dribbble' },
+                { icon: <FaBehance size={22} />, href: 'https://www.behance.net/krutikp', label: 'Behance' },
+                { icon: <FaEnvelope size={22} />, href: 'mailto:krutikparmar119@gmail.com', label: 'Email' },
+                { icon: <FaPhone size={22} />, href: 'tel:+919265542717', label: 'Contact' },
+              ].map(({ icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  aria-label={label}
+                  className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:bg-white hover:text-black transition-all duration-300"
+                >
+                  {icon}
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <div>
-             <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-8">Connect</h4>
-             <ul className="space-y-4 text-gray-400">
-              <li>
-                <a href="https://www.linkedin.com/in/krutikparmar1/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-lg">LinkedIn</a>
-              </li>
-              <li>
-                <a href="https://github.com/Karish-27" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-lg">GitHub</a>
-              </li>
-              <li>
-                <a href="mailto:krutikparmar119@gmail.com" className="hover:text-white transition-colors text-lg">Email</a>
-              </li>
-              <li>
-                <a href="tel:+919265542717" className="hover:text-white transition-colors text-lg">Phone</a>
-              </li>
-            </ul>
-          </div>
         </div>
 
         <div className="mt-32 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
@@ -61,8 +107,17 @@ export default function Footer() {
       </div>
       
       {/* Giant Background Text */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-5">
-         <h1 className="text-[30vw] leading-[0.7] font-black text-center translate-y-[20%]">WEFUTURAA</h1>
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none opacity-5">
+        <h1
+          className="font-black text-center whitespace-nowrap"
+          style={{
+            fontSize: 'clamp(1rem, 16vw, 99vw)',
+            lineHeight: 0.8,
+            marginBottom: '-0.12em',
+          }}
+        >
+          WEFUTURAA
+        </h1>
       </div>
     </footer>
   );

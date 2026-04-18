@@ -67,7 +67,7 @@ export default function About() {
             <span className="font-serif-italic text-white/60">experiences</span> that<br />
             move people forward.
           </h2>
-          <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
+          <p className="mt-8 text-lg md:text-xl text-white max-w-2xl leading-relaxed">
             wefuturaa is a design &amp; development studio obsessed with the intersection of
             aesthetics and function. We partner with brands to create digital products that
             are intentional, beautiful, and built to perform.
