@@ -388,8 +388,6 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
 }
 
 
-import { SmoothScrollHero } from '@/components/sections/SmoothScrollHero';
-
 export default function ExperiencePage() {
     const t = useTranslations('experience');
     const { resolvedTheme } = useTheme();
@@ -402,9 +400,6 @@ export default function ExperiencePage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="bg-background text-foreground relative"
         >
-            {/* Smooth Scroll Hero Section */}
-            <SmoothScrollHero />
-
             <FloatingShape
                 className="w-[min(500px,80vw)] h-[min(500px,80vw)] -top-20 -right-40"
                 gradient="radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%)"

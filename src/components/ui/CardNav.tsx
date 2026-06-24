@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, MotionValue } from 'framer-motion';
 import Link from 'next/link';
-import { ChevronDown, Trophy, Navigation, Briefcase, Rocket, BookOpen, Sparkles } from 'lucide-react';
+import { ChevronDown, Navigation, Briefcase, Rocket, BookOpen, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface NavLink {
@@ -139,7 +139,6 @@ export default function CardNav({
     }, [pathname, aboutItem.links]);
 
     const iconMap: Record<string, any> = {
-        "/achievements": Trophy,
         "/skills": Navigation,
         "/experience": Briefcase,
         "/projects": Rocket,

@@ -362,46 +362,10 @@ export default function ContactPage() {
                 {/* Interaction Section (Lanyard + Social + Form) */}
                 {/* We keep this relative and stable. No shrinking or fading here. */}
                 <div className="container-creative px-4 md:px-8 max-w-[1800px] mx-auto pb-40">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                    <div className="grid grid-cols-1 gap-12 lg:gap-20 items-start">
 
-                        {/* LEFT COLUMN: Lanyard */}
-                        <div className="col-span-1 lg:col-span-4 relative lg:sticky top-0 h-[400px] md:h-[500px] lg:h-[90vh] pointer-events-none z-20">
-                            {/* Anchor Slot/Bar for Lanyard */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 md:w-64 lg:w-96 h-2 bg-gradient-to-r from-transparent via-foreground/20 to-transparent blur-[2px] rounded-full z-30 mt-[-1px]" />
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 md:w-32 lg:w-48 h-[3px] bg-gradient-to-r from-transparent via-foreground/40 to-transparent rounded-full z-30" />
-
-                            <div className="w-full h-full pointer-events-auto overflow-visible">
-                                {!isLowPowerMode ? (
-                                    <ErrorBoundary fallback={<div className="w-full h-full flex items-center justify-center opacity-50">Interactive Card Unavailable</div>}>
-                                        <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} isLowPowerMode={isLowPowerMode} />
-                                    </ErrorBoundary>
-                                ) : (
-                                    <div className="w-full h-full flex items-center justify-center p-8">
-                                        <div className="relative w-full max-w-sm aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 bg-primary/5">
-                                            <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 italic font-serif">
-                                                Archive ID // Static
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-
-                        {/* RIGHT COLUMN: Content Stack */}
-                        <div className="col-span-1 lg:col-span-8 flex flex-col gap-16 relative z-10 pt-10 lg:pt-0">
-
-                            {/* Social Connect */}
-                            <motion.div
-                                className="w-full"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                            >
-                                <div className="flex flex-col gap-1">
-                                    <SocialTicker items={row1Real} direction="right" speed={50} isLowPowerMode={isLowPowerMode} />
-                                    <SocialTicker items={row2Real} direction="left" speed={50} isLowPowerMode={isLowPowerMode} />
-                                </div>
-                            </motion.div>
+                        {/* FULL WIDTH COLUMN: Content Stack */}
+                        <div className="col-span-1 flex flex-col gap-16 relative z-10">
 
                             {/* Contact Form */}
                             <motion.div

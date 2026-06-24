@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -62,7 +62,7 @@ export function InnovativeExperienceHero({ type, title, highlight, description }
             <div className="w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center h-full overflow-visible">
 
                 {/* Left Content Column - Strictly Following Image 1 */}
-                <div className="relative z-20 space-y-8 lg:-ml-28 lg:pr-12">
+                <div className="relative z-20 space-y-8 lg:pl-16 lg:pr-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

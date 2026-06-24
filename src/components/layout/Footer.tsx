@@ -454,7 +454,6 @@ function AboutHoverMenu({ tNav, onExpandChange }: { tNav: (key: string) => strin
     const [isOpen, setIsOpen] = useState(false);
 
     const subLinks = [
-        { href: '/achievements', label: tNav('achievements') },
         { href: '/skills', label: tNav('skills') },
         { href: '/experience', label: tNav('experience') },
         { href: '/projects', label: tNav('projects') },

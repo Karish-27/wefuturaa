@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -71,27 +71,6 @@ export default function Testimonial1() {
   return (
     <div className="bg-white dark:bg-black min-h-screen w-full grid place-content-center py-16 px-4 md:px-8 lg:px-16 relative">
       <div className="max-w-6xl mx-auto">
-        {/* Community Badge */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-[#f1efec] dark:bg-zinc-900 border border-neutral-200 dark:border-zinc-800 text-black dark:text-white px-5 py-1.5 rounded-full text-xs uppercase tracking-wider font-semibold flex items-center gap-2.5 shadow-sm">
-            <span className="relative flex h-2.5 w-2.5">
-              <motion.span
-                animate={{
-                  scale: [1, 2, 1],
-                  opacity: [0.6, 0, 0.6],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute inline-flex h-full w-full rounded-full bg-green-400/60"
-              />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]" />
-            </span>
-            Professional Statistics
-          </div>
-        </div>
 
         {/* Main Heading with Refined Block Reveal Animation */}
         <div className="text-center max-w-5xl mx-auto relative text-neutral-900 dark:text-white px-4 space-y-1 md:space-y-2">

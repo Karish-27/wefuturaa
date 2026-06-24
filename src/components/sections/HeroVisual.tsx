@@ -1,27 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import {
-  Instagram,
-  Github,
-  Linkedin,
   ArrowDownRight,
   Zap,
   Bot
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
-import Link from 'next/link';
 import gsap from "gsap";
-import { ProfileCard } from "@/components/ui/profile-card";
 import { Spotlight } from "@/components/ui/spotlight-new";
 
 export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
   const { personal } = portfolioData;
-  const [showProfile, setShowProfile] = useState(false);
-  const githubRef = useRef(null);
-  const linkedinRef = useRef(null);
-  const instagramRef = useRef(null);
   const zapRef = useRef(null);
   const zapSmallRef = useRef(null);
   const botRef = useRef(null);
@@ -30,71 +21,6 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
     if (!isExiting) return;
 
     const ctx = gsap.context(() => {
-      // Reveal + Loop for GitHub
-      gsap.fromTo(githubRef.current,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          onComplete: () => {
-            gsap.to(githubRef.current, {
-              y: -10,
-              duration: 2,
-              repeat: -1,
-              yoyo: true,
-              ease: "sine.inOut",
-              force3D: true
-            });
-          }
-        }
-      );
-
-      // Reveal + Loop for LinkedIn
-      gsap.fromTo(linkedinRef.current,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          delay: 0.1,
-          ease: "power3.out",
-          onComplete: () => {
-            gsap.to(linkedinRef.current, {
-              y: 10,
-              duration: 2.5,
-              repeat: -1,
-              yoyo: true,
-              ease: "sine.inOut",
-              force3D: true
-            });
-          }
-        }
-      );
-
-      // Reveal + Loop for Instagram
-      gsap.fromTo(instagramRef.current,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          delay: 0.2,
-          ease: "power3.out",
-          onComplete: () => {
-            gsap.to(instagramRef.current, {
-              x: 10,
-              duration: 3,
-              repeat: -1,
-              yoyo: true,
-              ease: "sine.inOut",
-              force3D: true
-            });
-          }
-        }
-      );
-
       // Zap pulsing - Energetic heartbeat effect
       gsap.to([zapRef.current, zapSmallRef.current], {
         scale: 1.2,
@@ -155,15 +81,6 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
               Hi, I'm {personal.name}. I build scalable systems powered by intelligence.
             </motion.p>
             <div className="relative">
-              <div ref={githubRef} className="absolute -top-4 right-0 md:right-2 text-primary/60 hover:text-primary z-20 opacity-0">
-                <a
-                  href={personal.socialLinks.find(s => s.platform === 'GitHub')?.url}
-                  target="_blank"
-                  className="block"
-                >
-                  <Github size={32} />
-                </a>
-              </div>
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -178,24 +95,6 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
           {/* Line 2: SOFT [ICON] WARE */}
           <div className="md:flex gap-8 items-center relative">
             <div className="relative">
-              <div ref={linkedinRef} className="absolute -top-8 left-4 text-primary/60 hover:text-primary z-20 opacity-0">
-                <a
-                  href={personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url}
-                  target="_blank"
-                  className="block"
-                >
-                  <Linkedin size={32} />
-                </a>
-              </div>
-              <div ref={instagramRef} className="absolute -bottom-12 right-24 md:right-36 text-primary/60 hover:text-primary z-20 opacity-0">
-                <a
-                  href={personal.socialLinks.find(s => s.platform === 'Instagram')?.url}
-                  target="_blank"
-                  className="block"
-                >
-                  <Instagram size={32} />
-                </a>
-              </div>
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -247,8 +146,8 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
             <div className="text-[10px] md:text-xs whitespace-nowrap font-bold tracking-[0.3em] text-muted-foreground uppercase">
               JAKARTA, ID — 2026
             </div>
-            <Link
-              href="/resume"
+            {/* <button
+              onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
               className="group flex items-center"
             >
               <motion.div
@@ -261,55 +160,12 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
                   <ArrowDownRight className="w-5 h-5" />
                 </div>
               </motion.div>
-            </Link>
+            </button> */}
           </div>
         </div>
 
 
 
-        {/* Award/Badge Vertical - MOVED TO LEFT */}
-        <div
-          className="absolute left-0 top-1/2 z-50 hidden md:flex items-center transform -translate-y-1/2 group/container"
-          onMouseEnter={() => setShowProfile(true)}
-          onMouseLeave={() => setShowProfile(false)}
-        >
-          {/* The Badge Trigger */}
-          <div className="relative z-50">
-            <motion.div
-              whileHover={{ x: 10 }}
-              className="bg-white text-black py-10 px-4 text-[10px] font-black uppercase tracking-[0.5em] shadow-2xl rounded-r-3xl border-r border-y border-zinc-200 cursor-pointer"
-            >
-              <span className="rotate-0 [writing-mode:vertical-rl]">
-                AVAILABLE FOR OPPORTUNITY
-              </span>
-            </motion.div>
-          </div>
-
-          {/* Profile Card Sidebar/Drawer Effect - Connected to avoid gap */}
-          <AnimatePresence>
-            {showProfile && (
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-                transition={{ type: "spring", damping: 30, stiffness: 300 }}
-                className="pl-4 pointer-events-auto"
-                style={{ width: 'max-content' }}
-              >
-                <ProfileCard
-                  name={personal.name}
-                  title="AI Engineer & Software Engineer"
-                  description={`${personal.name} is a dedicated AI & Software Engineer focused on building scalable, intelligent systems and robust software architectures. He specializes in bridging technical innovation with high-performance execution to deliver meaningful and impactful digital solutions.`}
-                  imageUrl={personal.avatar}
-                  githubUrl={personal.socialLinks.find(s => s.platform === 'GitHub')?.url}
-                  linkedinUrl={personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url}
-                  instagramUrl={personal.socialLinks.find(s => s.platform === 'Instagram')?.url}
-                  className="!max-w-4xl scale-[0.8] origin-left"
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
       </main>
     </motion.div>
   );

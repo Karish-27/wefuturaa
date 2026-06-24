@@ -3,42 +3,15 @@
 import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { Menu, X, Moon, Sun, Globe, ChevronDown, Focus } from 'lucide-react';
+import { Menu, X, Moon, Sun, Globe, ChevronDown } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 
 import CardNav from '@/components/ui/CardNav';
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
-
-function Clock() {
-    const [time, setTime] = useState<string>('');
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-        const updateTime = () => {
-            const now = new Date();
-            const h = String(now.getHours()).padStart(2, '0');
-            const m = String(now.getMinutes()).padStart(2, '0');
-            const s = String(now.getSeconds()).padStart(2, '0');
-            setTime(`${h}:${m}:${s}`);
-        };
-
-        updateTime();
-        const interval = setInterval(updateTime, 1000);
-        return () => clearInterval(interval);
-    }, []);
-
-    if (!mounted) return <span className="font-mono text-xl md:text-2xl font-black opacity-0">00:00:00</span>;
-
-    return (
-        <span className="font-mono text-xl md:text-2xl font-black text-gradient tracking-widest hover:tracking-[0.2em] transition-all duration-300">
-            {time}
-        </span>
-    );
-}
 
 // Sub-links for the "About" dropdown
 // Sub-links for the "About" dropdown
@@ -48,7 +21,6 @@ const useNavItems = () => {
         {
             label: "About",
             links: [
-                { label: t('achievements'), href: "/achievements", description: t('achievementsDesc') },
                 { label: t('skills'), href: "/skills", description: t('skillsDesc') },
                 { label: t('experience'), href: "/experience", description: t('experienceDesc') },
                 { label: t('projects'), href: "/projects", description: t('projectsDesc') },
@@ -163,9 +135,16 @@ export function Navbar() {
                         )}
                         layout
                     >
-                        {/* Make the Clock a Link to Home */}
-                        <Link href="/" className="relative group min-w-[120px]" onClick={handleHomeClick}>
-                            <Clock />
+                        {/* Logo linking to Home */}
+                        <Link href="/" className="relative group" onClick={handleHomeClick}>
+                            <Image
+                                src="/Wefuturaa_logo.svg"
+                                alt="Wefuturaa"
+                                width={120}
+                                height={40}
+                                className="h-8 w-auto"
+                                priority
+                            />
                         </Link>
 
                         {/* Desktop Navigation with CardNav */}
@@ -202,18 +181,7 @@ export function Navbar() {
 
                         {/* Controls */}
                         <div className="flex items-center gap-2 md:gap-3">
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="p-2 md:p-2.5 rounded-full bg-muted/80 hover:bg-muted transition-colors"
-                                aria-label="Focus mode"
-                            >
-                                <Link href="https://arfazrllworkspace.vercel.app/" target="_blank" rel="noopener noreferrer">
-                                    <Focus className="w-4 h-4" />
-                                </Link>
-                            </motion.button>
-
-                            <motion.button
+<motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={toggleLocale}

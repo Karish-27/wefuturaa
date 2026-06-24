@@ -96,7 +96,6 @@ export const NavigationShortcuts = () => {
                 { id: '04', title: t('experience'), href: '/experience' },
                 { id: '05', title: t('menu.experience'), href: '/experience' }, // Education? Original was Experience too in href
                 { id: '06', title: t('projects'), href: '/projects' },
-                { id: '07', title: t('achievements'), href: '/achievements' },
             ]
         },
         {

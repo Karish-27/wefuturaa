@@ -1,6 +1,6 @@
 {
     "navigation": {
-        "home": "Beranda",
+        "home": "Home",
         "about": "Tentang",
         "projects": "Proyek",
         "experience": "Pengalaman",
@@ -8,7 +8,7 @@
         "achievements": "Pencapaian",
         "blog": "Blog",
         "gallery": "Galeri",
-        "contact": "Kontak",
+        "contact": "Contact",
         "resume": "Resume",
         "tools": "Peralatan",
         "menu": {

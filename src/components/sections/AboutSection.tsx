@@ -24,11 +24,6 @@ import { IdentitySequence } from "./IdentitySequence";
 import ScrollAdventure from "@/components/ui/animated-scroll";
 import { ArgentLoopInfiniteSlider } from "@/components/ui/argent-loop-infinite-slider";
 import TeamShowcase from "@/components/ui/team-showcase";
-import { CertificateShowcase } from "@/components/ui/certificate-marquee";
-import { GitHubShowcase } from "@/components/ui/github-showcase";
-import KaggleShowcase from "@/components/ui/kaggle-showcase";
-import { WakaTimeShowcase } from "@/components/ui/wakatime-showcase";
-import { ShowcaseStack } from "@/components/ui/showcase-stack";
 
 const showcaseMembers = [
     // 1. Cyber Physical Systems Laboratory
@@ -526,7 +521,7 @@ const ScrollHijackSection = () => {
     const exitBorderRadius = useTransform(exitProgress, [0, 1], ["0px", "40px"]);
 
     return (
-        <div ref={sectionRef} className="relative h-[600vh]">
+        <div ref={sectionRef} className="relative h-[350vh]">
             <div className="sticky top-0 h-screen w-full overflow-hidden z-10">
                 <motion.div
                     style={{ scale: exitScale, opacity: exitOpacity, borderRadius: exitBorderRadius }}
@@ -628,25 +623,7 @@ export default function AboutSection() {
                             </div>
                         </motion.div>
 
-                        {/* Certificate Showcase Section */}
-                        <div className="w-full mt-32 md:mt-48">
-                            <CertificateShowcase />
-                        </div>
-
-                        {/* Stacking Card Showcases */}
-                        <ShowcaseStack>
-                            <div className="w-full">
-                                <GitHubShowcase />
-                            </div>
-                            <div className="w-full">
-                                <KaggleShowcase />
-                            </div>
-                            <div className="w-full">
-                                <WakaTimeShowcase />
-                            </div>
-                        </ShowcaseStack>
                     </div>
-                    <AuditFunnel />
                 </div>
             </div>
         </section >

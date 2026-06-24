@@ -46,37 +46,23 @@ const HeroVisual = dynamic(() => import("@/components/sections/HeroVisual").then
     ssr: false
 });
 
+const InnovativeExperienceHero = dynamic(() => import("@/components/sections/InnovativeExperienceHero").then(mod => mod.InnovativeExperienceHero), {
+    ssr: false,
+    loading: () => <div className="h-[500px] w-full animate-pulse bg-zinc-100/5 dark:bg-zinc-800/5" />
+});
+
 // ─── Helpers (Keeping Original Design) ───────────────────────────────────────
 
 
 const MetricCTAHijack = () => {
     return (
-        <>
-            <StatsSection showOnly="top" />
-            <section className="relative">
-                {/* Layer 1: The Blog/Book Slider (Sticky) */}
-                <div className="sticky top-0 z-0 overflow-hidden">
-                    <StatsSection showOnly="bottom" />
-                </div>
-                
-                {/* Layer 2: The CTA Section (Slides Over) */}
-                <div className="relative z-20 bg-background dark:bg-black">
-                    {/* Top shadow element to prevent downward bleeding into footer */}
-                    <div className="absolute top-0 left-0 w-full h-10 shadow-[0_-50px_100px_rgba(0,0,0,0.05)] dark:shadow-[0_-50px_150px_rgba(0,0,0,0.8)] -z-10" />
-                    
-                    <div className="h-[10vh]" />
-                    <CTASection />
-                    <div className="h-20" />
-                </div>
-            </section>
-        </>
+        <div className="relative bg-background dark:bg-black">
+            <div className="h-[10vh]" />
+            <CTASection />
+            <div className="h-20" />
+        </div>
     );
 };
-
-const StatsSection = dynamic(() => import("@/components/sections/StatsSection"), {
-    ssr: false,
-    loading: () => <div className="h-[500px] w-full animate-pulse bg-zinc-100/5 dark:bg-zinc-800/5" />
-});
 
 const CTASection = dynamic(() => import("@/components/sections/CTASection"), {
     ssr: false,
@@ -154,6 +140,12 @@ export default function HomePage() {
                     <>
                         <ExpertiseSection />
                         <AboutSection />
+                        <InnovativeExperienceHero
+                            type="journey"
+                            title="Crafting Experiences"
+                            highlight="That Matter"
+                            description="From internships to leadership roles, each step has been a lesson in collaboration, innovation, and pushing boundaries."
+                        />
                         <MetricCTAHijack />
                         <SocialCorner className="fixed bottom-12 right-12 z-[30]" />
                     </>
