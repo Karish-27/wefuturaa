@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
-import {
-  ArrowDownRight,
-  Zap,
-  Bot
-} from "lucide-react";
+import { ArrowDownRight, Zap, Bot } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
@@ -28,7 +24,7 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
         repeat: -1,
         yoyo: true,
         ease: "power2.inOut",
-        force3D: true
+        force3D: true,
       });
 
       // Bot floating - Responsive and smooth
@@ -39,7 +35,7 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        force3D: true
+        force3D: true,
       });
     });
 
@@ -69,7 +65,6 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
 
       <main className="relative flex-1 flex flex-col justify-center pt-40 pb-20 z-10">
         <div className="flex relative gap-4 px-6 md:items-center w-full flex-col justify-center">
-
           {/* Line 1: AI & DATA */}
           <div className="md:flex gap-8 items-center relative">
             <motion.p
@@ -78,16 +73,19 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[10px] md:text-xs text-muted-foreground text-start md:text-right leading-relaxed max-w-[200px] md:max-w-[220px] font-medium uppercase tracking-[0.2em]"
             >
-              Hi, I'm {personal.name}. I build scalable systems powered by intelligence.
+              WE BUILD DIGITAL PRODUCTS FOR STARTUPS, BUSINESSES AND GROWING
+              BRANDS.
             </motion.p>
             <div className="relative">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
-                animate={isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                animate={
+                  isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                }
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[clamp(3rem,11vw,13rem)] font-black leading-[0.85] tracking-tighter text-shiny will-change-transform px-4"
               >
-                AI & DATA
+                WE DESIGN
               </motion.h1>
             </div>
           </div>
@@ -97,18 +95,30 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
             <div className="relative">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
-                animate={isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                animate={
+                  isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                }
+                transition={{
+                  duration: 1.2,
+                  delay: 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
                 className="text-[clamp(3rem,11vw,13rem)] md:flex items-center font-black leading-[0.85] tracking-tighter text-shiny will-change-transform px-4"
               >
-                <span className="">SOFT</span>
+                <span className="">WE</span>
                 <div ref={zapRef} className="hidden lg:block mx-[0.05em]">
-                  <Zap className="w-[0.8em] h-[0.8em] text-sky-400" strokeWidth={1.5} />
+                  <Zap
+                    className="w-[0.8em] h-[0.8em] text-sky-400"
+                    strokeWidth={1.5}
+                  />
                 </div>
                 <div ref={zapSmallRef} className="block lg:hidden mx-[0.02em]">
-                  <Zap className="w-[0.8em] h-[0.8em] text-sky-400" strokeWidth={2} />
+                  <Zap
+                    className="w-[0.8em] h-[0.8em] text-sky-400"
+                    strokeWidth={2}
+                  />
                 </div>
-                <span className="">WARE</span>
+                <span className="">BUILD</span>
               </motion.h1>
             </div>
           </div>
@@ -118,14 +128,18 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 1.2,
+                delay: 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="text-[clamp(3rem,11vw,13rem)] md:flex items-center font-black leading-[0.85] tracking-tighter text-shiny will-change-transform px-4"
             >
-              <span className="">EN</span>
+              <span className="">WE</span>
               <div ref={botRef} className="mx-[0.05em] relative">
                 <Bot className="w-[0.85em] h-[0.85em] text-yellow-500 fill-yellow-500/10" />
               </div>
-              <span className="">GINEER</span>
+              <span className="">SCALE</span>
             </motion.h1>
 
             <motion.p
@@ -134,7 +148,8 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-[10px] md:text-xs text-muted-foreground pt-4 md:pt-8 leading-relaxed max-w-[250px] md:max-w-[200px] font-medium uppercase tracking-widest"
             >
-              Open to all forms of collaboration, regardless of location and language.
+              CRAFTING SCALABLE DIGITAL SOLUTIONS THAT HELP BUSINESSES GROW
+              FASTER.
             </motion.p>
           </div>
         </div>
@@ -144,7 +159,7 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
           <div className="flex items-center gap-6">
             <Separator className="flex-1 h-[1px] bg-foreground/10 hidden md:block" />
             <div className="text-[10px] md:text-xs whitespace-nowrap font-bold tracking-[0.3em] text-muted-foreground uppercase">
-              JAKARTA, ID — 2026
+              INDIA — GLOBAL
             </div>
             {/* <button
               onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
@@ -163,9 +178,6 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
             </button> */}
           </div>
         </div>
-
-
-
       </main>
     </motion.div>
   );
