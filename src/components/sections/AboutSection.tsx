@@ -193,7 +193,7 @@ const AboutLeadIn = () => {
                 <div className="relative z-10">
                     {/* Top Tagline */}
                     <div className="flex justify-between items-start mb-6 md:mb-10">
-                        <span className="text-red-600 dark:text-red-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">I BELIEVE</span>
+                        <span className="text-red-600 dark:text-red-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">WHY CHOOSE WEFUTURAA</span>
                         <span className="text-zinc-400 dark:text-zinc-600 text-[9px] font-mono tracking-widest uppercase hidden md:block">{t('leadIn.role')}</span>
                     </div>
 
@@ -206,8 +206,8 @@ const AboutLeadIn = () => {
                     >
                         <h2 className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[76px] xl:text-[88px] font-bold tracking-tight leading-[0.92] text-zinc-900 dark:text-white transition-colors">
                             <span className="text-zinc-300 dark:text-zinc-700 mr-2">"</span>
-                            {t('leadIn.applied')} <span className="text-zinc-400 dark:text-zinc-500 font-medium">{t('leadIn.intelligence')}</span>. <br className="hidden md:block" />
-                            <span className="text-zinc-900 dark:text-white">because</span> production <span className="font-serif italic font-normal text-zinc-900 dark:text-white lowercase opacity-90">{t('leadIn.engineering')}</span>
+                            {t('leadIn.applied')} <span className="text-zinc-400 dark:text-zinc-500 font-medium">{t('leadIn.intelligence')}</span>... <br className="hidden md:block" />
+                            <span className="text-zinc-900 dark:text-white">{t('leadIn.production')}</span> <span className="font-serif italic font-normal text-zinc-900 dark:text-white lowercase opacity-90">{t('leadIn.engineering')}</span> {t('leadIn.partner')}
                             <span className="text-zinc-300 dark:text-zinc-700 ml-1">.."</span>
                         </h2>
                     </motion.div>
