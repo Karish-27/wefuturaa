@@ -193,7 +193,7 @@ const AboutLeadIn = () => {
                 <div className="relative z-10">
                     {/* Top Tagline */}
                     <div className="flex justify-between items-start mb-6 md:mb-10">
-                        <span className="text-red-600 dark:text-red-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">WHY CHOOSE WEFUTURAA</span>
+                        <span className="text-red-600 dark:text-red-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">WHY CHOOSE WeFuturaa</span>
                         <span className="text-zinc-400 dark:text-zinc-600 text-[9px] font-mono tracking-widest uppercase hidden md:block">{t('leadIn.role')}</span>
                     </div>
 
@@ -225,7 +225,7 @@ const AboutLeadIn = () => {
                         {/* Right columns */}
                         <div className="md:col-span-7 flex flex-col sm:flex-row gap-8 text-[13px]">
                             <div className="flex-1 space-y-3">
-                                <span className="text-zinc-800 dark:text-zinc-200 font-bold uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-900 pb-3">Scope & Platform</span>
+                                <span className="text-zinc-800 dark:text-zinc-200 font-bold uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-900 pb-3">DEDICATED TEAM</span>
                                 <p className="text-zinc-500 leading-relaxed">
                                     {t('leadIn.scope')}
                                 </p>
@@ -234,7 +234,7 @@ const AboutLeadIn = () => {
                                 </p>
                             </div>
                             <div className="flex-1 space-y-3 flex flex-col">
-                                <span className="text-zinc-800 dark:text-zinc-200 font-bold uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-900 pb-3">Integration</span>
+                                <span className="text-zinc-800 dark:text-zinc-200 font-bold uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-900 pb-3">END-TO-END DELIVERY</span>
                                 <p className="text-zinc-500 leading-relaxed">
                                     {t('leadIn.integration')}
                                 </p>

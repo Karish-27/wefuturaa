@@ -2715,15 +2715,16 @@ WAKATIME_API_KEY=your_wakatime_key`
     ],
     tools: [
         { name: 'VS Code', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg', category: 'ide' },
-        { name: 'Jupyter', icon: 'https://cdn.simpleicons.org/jupyter', category: 'ide' },
-        { name: 'Google Colab', icon: 'https://cdn.simpleicons.org/googlecolab', category: 'ide' },
+        { name: 'Kotlin', icon: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png', category: 'ide' },
+        { name: 'Firebase', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Firebase_icon.svg', category: 'ide' },
         { name: 'Figma', icon: 'https://cdn.simpleicons.org/figma', category: 'design' },
         { name: 'GitHub', icon: 'https://cdn.simpleicons.org/github', category: 'devops' }, // Default black, handled by dark:invert in component
-        { name: 'Git', icon: 'https://cdn.simpleicons.org/git', category: 'devops' },
-        { name: 'Docker', icon: 'https://cdn.simpleicons.org/docker', category: 'devops' },
-        { name: 'Conda', icon: 'https://cdn.simpleicons.org/anaconda', category: 'devops' },
-        { name: 'Linux', icon: 'https://cdn.simpleicons.org/linux', category: 'devops' },
+        { name: 'Webflow', icon: '	https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/webflow-icon.png', category: 'devops' },
+        { name: 'Shopify', icon: '	https://img.icons8.com/?size=256&id=uSHYbs6PJfMT&format=png', category: 'devops' },
+        { name: 'Android Studio', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Android_Studio_icon_%282023%29.svg', category: 'devops' },
+        { name: 'Framer', icon: 'https://cdn.iconscout.com/icon/free/png-256/free-framer-logo-icon-svg-download-png-2944880.png', category: 'devops' },
         { name: 'Postman', icon: 'https://cdn.simpleicons.org/postman', category: 'devops' },
+       
     ],
     faqs: [
         {

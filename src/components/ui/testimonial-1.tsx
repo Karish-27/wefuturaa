@@ -31,19 +31,20 @@ export default function Testimonial1() {
     label: string;
     href: string;
     cta: string;
+    stars?: number;
   }
 
   const stats: StatItem[] = [
+    // {
+    //   value: 3.62,
+    //   decimals: 2,
+    //   suffix: "/4.0",
+    //   label: "Currt GPA",
+    //   href: "/resume",
+    //   cta: "View Resume",
+    // },
     {
-      value: 3.62,
-      decimals: 2,
-      suffix: "/4.0",
-      label: "Current GPA",
-      href: "/resume",
-      cta: "View Resume",
-    },
-    {
-      value: 20,
+      value: 28,
       decimals: 0,
       suffix: "+",
       label: "Projects Completed",
@@ -51,20 +52,21 @@ export default function Testimonial1() {
       cta: "View Projects",
     },
     {
-      value: 2,
+      value: 6,
       decimals: 0,
-      suffix: " Years",
+      suffix: " + Yrs",
       label: "Professional Exp",
       href: "/experience",
       cta: "Explore Career",
     },
     {
-      value: 34,
+      value: 100,
       decimals: 0,
-      suffix: "+",
-      label: "Tech & Tools",
-      href: "/skills",
-      cta: "See Skills",
+      suffix: "%",
+      label: "Client Success Ratio",
+      href: "/contact",
+      cta: "Get in Touch",
+      stars: 5,
     },
   ];
 
@@ -75,10 +77,10 @@ export default function Testimonial1() {
         {/* Main Heading with Refined Block Reveal Animation */}
         <div className="text-center max-w-5xl mx-auto relative text-neutral-900 dark:text-white px-4 space-y-1 md:space-y-2">
           {[
-            { text: "Data that speaks. AI that reasons.", color: "#6366f1", delay: 0 },
-            { text: "Software that ships.", color: "#10b981", delay: 0.15 },
-            { text: "Three disciplines, one engineer", color: "#f59e0b", delay: 0.3 },
-            { text: "and the numbers behind the work.", color: "#ef4444", delay: 0.45 }
+            { text: "Since 2019, our team has been", color: "#6366f1", delay: 0 },
+            { text: "delivering reliable digital solutions", color: "#10b981", delay: 0.15 },
+            { text: "for clients across the Middle East,", color: "#f59e0b", delay: 0.3 },
+            { text: "Asia, Australia, and USA.", color: "#ef4444", delay: 0.45 }
           ].map((line, i) => (
             <div key={i} className="relative block overflow-hidden py-1.5">
               <motion.h1
@@ -138,9 +140,20 @@ export default function Testimonial1() {
                   <span className="text-[10px] sm:text-xs font-medium text-neutral-500 dark:text-zinc-400 uppercase tracking-wider mb-2">
                     {stat.label}
                   </span>
-                  <div className="text-2xl sm:text-3xl font-black text-neutral-900 dark:text-white tracking-tighter flex items-baseline">
-                    <Counter value={stat.value} decimals={stat.decimals} />
-                    <span className="text-lg sm:text-2xl ml-0.5">{stat.suffix}</span>
+                  <div className="text-2xl sm:text-3xl font-black text-neutral-900 dark:text-white tracking-tighter flex items-center gap-2">
+                    <span className="flex items-baseline">
+                      <Counter value={stat.value} decimals={stat.decimals} />
+                      <span className="text-lg sm:text-2xl ml-0.5">{stat.suffix}</span>
+                    </span>
+                    {stat.stars && (
+                      <div className="flex items-center gap-0.5 ml-2">
+                        {Array.from({ length: stat.stars }).map((_, i) => (
+                          <svg key={i} className="w-4 h-4 text-amber-400 fill-amber-400" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 

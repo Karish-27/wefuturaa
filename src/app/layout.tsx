@@ -32,8 +32,8 @@ const signature = Alex_Brush({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Arfazrll | AI & Software Engineer',
-        template: '%s | Portfolio',
+        default: 'WeFuturaa',
+        template: '%s | WeFuturaa',
     },
     description: 'A passionate developer building digital experiences that inspire. Explore my projects, skills, and professional journey.',
     keywords: ['developer', 'portfolio', 'web development', 'full stack', 'react', 'nextjs'],
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
         type: 'website',
         locale: 'en_US',
         url: 'https://your-domain.com',
-        title: 'Arfazrll | AI & Software Engineer',
+        title: 'WeFuturaa',
         description: 'A passionate developer building digital experiences that inspire.',
         siteName: 'Portfolio',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Arfazrll | AI & Software Engineer',
+        title: 'WeFuturaa',
         description: 'A passionate developer building digital experiences that inspire.',
         creator: '@yourusername',
     },
@@ -83,7 +83,6 @@ export const viewport: Viewport = {
     minimumScale: 1,
 };
 
-import { ThemeAwareClickSpark } from '@/components/ui/ThemeAwareClickSpark';
 import { ConditionalNavigation } from '@/components/layout/ConditionalNavigation';
 import { ChatBot } from '@/components/layout/ChatBot';
 
@@ -101,12 +100,10 @@ export default async function RootLayout({
                 <ThemeProvider>
                     <I18nProvider locale={locale} messages={messages}>
                         <SmoothScrollProvider>
-                            <ThemeAwareClickSpark>
-                                <ConditionalNavigation>
-                                    {children}
-                                </ConditionalNavigation>
-                                <ChatBot headless />
-                            </ThemeAwareClickSpark>
+                            <ConditionalNavigation>
+                                {children}
+                            </ConditionalNavigation>
+                            <ChatBot headless />
                         </SmoothScrollProvider>
                     </I18nProvider>
                 </ThemeProvider>
