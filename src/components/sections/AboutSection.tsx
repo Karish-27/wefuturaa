@@ -29,8 +29,8 @@ const showcaseMembers = [
     // 1. Cyber Physical Systems Laboratory
     ...portfolioData.experiences.filter(exp => exp.id === 'prof-7').map(exp => ({
         id: exp.id,
-        name: "Cyber Physical Systems Laboratory",
-        role: exp.position.replace(' (Contract-Based)', ''),
+        name: "Prem Parmar",
+        role: "Full Stack Developer",
         description: exp.description,
         period: "August 2025 - Present",
         image: "/journey/researchassistant2.jpg",
@@ -39,8 +39,8 @@ const showcaseMembers = [
     // 2. HUMIC Engineering
     ...portfolioData.experiences.filter(exp => exp.id === 'prof-3').map(exp => ({
         id: exp.id,
-        name: "HUMIC Engineering",
-        role: exp.position,
+        name: "Krutik Parmar",
+        role: "Lead Designer & Client Success",
         description: exp.description,
         period: "September 2025 - December 2025",
         image: "/journey/aideveloperintern1.jpg",
@@ -49,8 +49,8 @@ const showcaseMembers = [
     // 3. Informatics Laboratory, Telkom University
     ...portfolioData.experiences.filter(exp => exp.id === 'prof-6').map(exp => ({
         id: exp.id,
-        name: exp.company,
-        role: exp.position.replace(' (Contract-Based)', ''),
+        name: "Karishma Kumavat",
+        role: "Lead Full Stack Developer",
         description: exp.description,
         period: "September 2025 - January 2026",
         image: "/journey/computernetworkpracticumassistant2.jpg",
@@ -59,8 +59,8 @@ const showcaseMembers = [
     // 4. Digistar Club by Telkom Indonesia
     ...portfolioData.experiences.filter(exp => exp.id === 'lead-2').map(exp => ({
         id: exp.id,
-        name: exp.company,
-        role: exp.position,
+        name: "Priya Sahani",
+        role: "Quality Assurance Engineer",
         description: exp.description,
         period: "October 2025 - December 2025",
         image: "/journey/chiefcommittee1.jpg",
@@ -69,20 +69,20 @@ const showcaseMembers = [
     // 5. Food and Agriculture Office of Bandung City
     ...portfolioData.experiences.filter(exp => exp.id === 'prof-8').map(exp => ({
         id: exp.id,
-        name: "Food and Agriculture Office of Bandung City",
-        role: exp.position,
+        name: "Kapil Kori",
+        role: "Mobile Application Developer",
         description: exp.description,
         period: "July - September 2025",
         image: "/journey/dataentryassistant1.jpg",
         social: exp.externalLink ? { website: exp.externalLink } : undefined
     })),
-    // 6. View more
+    // 6. Vinita Asrani
     {
-        id: 'view-more',
-        name: 'View more',
-        role: 'Explore all experiences',
+        id: 'vinita-asrani',
+        name: 'Vinita Asrani',
+        role: 'Business Development Executive',
+        description: 'Manages client acquisition, business partnerships, proposal preparation, and project coordination from inquiry to onboarding.',
         image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop',
-        social: { website: '/experience' }
     }
 ];
 
@@ -612,10 +612,11 @@ export default function AboutSection() {
                         >
                             <div className="mb-6 md:mb-10 text-center space-y-4">
                                 <h3 className="text-foreground text-3xl md:text-5xl font-black tracking-tighter">
-                                    View My Related Experience
+                                    MEET OUR TEAM
                                 </h3>
                                 <p className="text-muted-foreground text-[10px] md:text-xs font-mono uppercase tracking-[0.4em]">
-                                    Professional Background
+                                    The People Behind
+WeFuturaa
                                 </p>
                             </div>
                             <div className="w-full">
