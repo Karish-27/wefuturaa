@@ -1903,7 +1903,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             id: 'prof-3',
             company: 'HUMIC Engineering Research Center',
             position: 'AI Developer Intern',
-            description: 'During my internship, I engineered transformer-based models for cybersecurity threat detection, achieving exceptional F1-scores across large-scale datasets. Working within a research team, I successfully delivered integrated AI-driven security solutions for complex intrusion detection challenges.',
+            description: 'Leads UI/UX strategy, product design, and client communication from discovery to final delivery. Ensures every project balances business goals, user experience, and execution quality.',
             responsibilities: [
                 'Managing and processing large-scale datasets through entire ML pipeline',
                 'Building Deep Learning and Transformer-based attack detection models',
@@ -1963,7 +1963,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             id: 'prof-6',
             company: 'Informatics Laboratory, Telkom University',
             position: 'Computer Network Practicum Assistant (Contract-Based)',
-            description: 'I mentored over 100 students in advanced networking concepts, including TCP/IP and socket programming, while serving as PIC for major laboratory projects. My role involved leading 15+ teams through successful project completions and maintaining rigorous academic standards through comprehensive evaluation.',
+            description: 'Architects scalable web applications, APIs, and backend systems while overseeing technical implementation across client projects.',
             responsibilities: [
                 'Mentoring lab sessions with up to 30 students',
                 'Leading Socket Programming project as PIC',
@@ -1983,7 +1983,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             id: 'prof-7',
             company: 'Cyber Physical System Laboratory',
             position: 'Research Assistant (Contract-Based)',
-            description: 'As a Research Assistant and Mentor, I analyzed over 100K records across multiple datasets and developed high-accuracy ML/DL models. I also spearheaded mentoring initiatives for 60+ junior assistants, guiding them through end-to-end deep learning project development.',
+            description: 'Develops modern web applications across frontend and backend, contributing to scalable architecture, feature development, and performance optimization.',
             responsibilities: [
                 'Contributing to research-based products and collaborative AI projects',
                 'Designing comprehensive learning materials for Deep Learning and Computer Vision',
@@ -2001,7 +2001,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             id: 'prof-8',
             company: 'Dinas Pangan dan Pertanian Kota Bandung',
             position: 'Data Entry Assistant',
-            description: 'I streamlined data management processes by validating thousands of daily records and producing analytical reports to support government decision-making. My work focused on maintaining high data accuracy and documenting structured logs for research and resource tracking.',
+            description: 'Builds high-performance Android and React Native applications with a focus on smooth user experience and production-ready code.',
             responsibilities: [
                 'Daily data input and validation',
                 'Developing analytical reports for stakeholders',
@@ -2042,7 +2042,7 @@ WAKATIME_API_KEY=your_wakatime_key`
             id: 'lead-2',
             company: 'Digistar Club by Telkom Indonesia',
             position: 'Chief Committee',
-            description: 'Serving as Project Officer, I directed the execution of major digital programs for 500+ participants, coordinating diverse speakers and industry partners. By designing interactive event concepts and managing a cross-functional team, I significantly boosted engagement and ensured 100% milestone completion.',
+            description: 'Ensures every release meets quality standards through comprehensive testing, bug verification, usability checks, and final validation.',
             responsibilities: [
                 'Leading end-to-end planning for DigiTalks and Digicourse',
                 'Overseeing program execution and coordination',

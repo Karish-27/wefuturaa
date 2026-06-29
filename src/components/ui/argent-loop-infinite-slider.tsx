@@ -54,6 +54,38 @@ const PROJECT_DATA: ProjectData[] = [
     description: "Enterprise IoT solution for precision agriculture.",
     slug: "terraflow-platform"
   },
+   {
+    title: "Terraflow Platform",
+    image: "/project/terraflowplatform1.png",
+    category: "IoT & Embedded",
+    year: "2025",
+    description: "Enterprise IoT solution for precision agriculture.",
+    slug: "terraflow-platform"
+  },
+   {
+    title: "Terraflow Platform",
+    image: "/project/terraflowplatform1.png",
+    category: "IoT & Embedded",
+    year: "2025",
+    description: "Enterprise IoT solution for precision agriculture.",
+    slug: "terraflow-platform"
+  },
+   {
+    title: "Terraflow Platform",
+    image: "/project/terraflowplatform1.png",
+    category: "IoT & Embedded",
+    year: "2025",
+    description: "Enterprise IoT solution for precision agriculture.",
+    slug: "terraflow-platform"
+  },
+   {
+    title: "Terraflow Platform",
+    image: "/project/terraflowplatform1.png",
+    category: "IoT & Embedded",
+    year: "2025",
+    description: "Enterprise IoT solution for precision agriculture.",
+    slug: "terraflow-platform"
+  },
 ];
 
 export function ArgentLoopInfiniteSlider() {
@@ -348,7 +380,7 @@ export function ArgentLoopInfiniteSlider() {
                   pointerEvents: useTransform(smoothProgress, (v) => v > projectArea ? "auto" : "none")
                 }}
               >
-                <div className="flex items-center gap-4 pointer-events-auto">
+                {/* <div className="flex items-center gap-4 pointer-events-auto">
                   <a 
                     href="https://github.com/Arfazrll" 
                     target="_blank" 
@@ -367,7 +399,7 @@ export function ArgentLoopInfiniteSlider() {
                       <ArrowRight className="w-6 h-6" />
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </motion.div>
             </div>
           </motion.div>
