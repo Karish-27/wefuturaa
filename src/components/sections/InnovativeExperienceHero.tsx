@@ -32,12 +32,13 @@ const NODES_DATA: Record<string, NodeData[]> = {
         { label: 'GDSC ML Path', description: 'Mastering regression, classification, and core ML.', orbitIndex: 1, position: 0.05, imageUrl: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=400&auto=format&fit=crop" },
     ],
     journey: [
-        { label: 'Project Officer', description: 'Telkom Digistar - Managing digital talent programs.', orbitIndex: 0, position: 0.15, imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop" },
-        { label: 'Academic Affairs', description: 'HMIT Telkom - Planning academic & student support.', orbitIndex: 1, position: 0.35, imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=400&auto=format&fit=crop" },
-        { label: 'Public Relations', description: 'Youth Ranger Indonesia - Brand narrative & engagement.', orbitIndex: 0, position: 0.55, imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=400&auto=format&fit=crop" },
-        { label: 'Fundraising Lead', description: 'GI BEI Telkom - Strategic donor & sponsorship outreach.', orbitIndex: 1, position: 0.75, imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=400&auto=format&fit=crop" },
-        { label: 'Network Assistant', description: 'IFLAB Assistant - Guiding Socket Programming projects.', orbitIndex: 0, position: 0.9, imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=400&auto=format&fit=crop" },
-        { label: 'HR Management', description: 'CPS Laboratory - Fostering lab development & culture.', orbitIndex: 1, position: 0.02, imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=400&auto=format&fit=crop" },
+        { label: 'Marketing', description: 'Campaign Management & Analytics Platforms', orbitIndex: 0, position: 0.15, imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop" },
+        { label: 'HealthCare', description: 'Hospital Management & Patient Portals', orbitIndex: 1, position: 0.35, imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=400&auto=format&fit=crop" },
+        { label: 'Ecommerce', description: 'Online Stores & Marketplace Solutions', orbitIndex: 0, position: 0.55, imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=400&auto=format&fit=crop" },
+        { label: 'Artificial Intelligence', description: 'AI Assistants & Business Automation', orbitIndex: 1, position: 0.75, imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=400&auto=format&fit=crop" },
+        { label: 'RealEstate', description: 'Property Management & Listing Platforms', orbitIndex: 0, position: 0.9, imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=400&auto=format&fit=crop" },
+        { label: 'Automotive', description: 'Digital Solutions for Modern Mobility', orbitIndex: 1, position: 0.02, imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=400&auto=format&fit=crop" },
+        
     ],
     experience: [
         { label: 'CV Researcher', description: 'CPS Lab - End-to-end intelligent model development.', orbitIndex: 0, position: 0.2, imageUrl: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=400&auto=format&fit=crop" },
@@ -78,14 +79,14 @@ export function InnovativeExperienceHero({ type, title, highlight, description }
                             {description}
                         </p>
 
-                        <div className="pt-4">
+                        {/* <div className="pt-4">
                             <Link
                                 href="/resume"
                                 className="group flex items-center gap-2 w-fit px-6 py-3 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white font-bold text-sm transition-all hover:bg-neutral-200 dark:hover:bg-neutral-700"
                             >
                                 View resume <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                             </Link>
-                        </div>
+                        </div> */}
                     </motion.div>
                 </div>
 
@@ -121,6 +122,9 @@ function OrbitalNode({ node, isHovered, onHover, onLeave }: {
 }) {
     const path = node.orbitIndex === 0 ? INNER_PATH : OUTER_PATH;
     const isLeftSide = node.position < 0.25 || node.position > 0.75;
+    // Artificial Intelligence sits at the top of the orbit, so its card opens
+    // downward instead of upward to avoid running off the top of the viewport.
+    const flipDown = node.label === 'Artificial Intelligence';
 
     return (
         <div
@@ -133,9 +137,9 @@ function OrbitalNode({ node, isHovered, onHover, onLeave }: {
             }}
         >
             <div className="relative" onMouseEnter={onHover} onMouseLeave={onLeave}>
-                {/* 
-                    The anchor point of this container is at (0,0). 
-                    We place the button exactly at (0,0) by centering it with translate. 
+                {/*
+                    The anchor point of this container is at (0,0).
+                    We place the button exactly at (0,0) by centering it with translate.
                 */}
                 <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2">
                     <button
@@ -154,14 +158,22 @@ function OrbitalNode({ node, isHovered, onHover, onLeave }: {
                     <AnimatePresence>
                         {isHovered && (
                             <motion.div
-                                initial={{ opacity: 0, y: 10, scale: 0.95, x: "-50%" }}
+                                initial={{ opacity: 0, y: flipDown ? -10 : 10, scale: 0.95, x: "-50%" }}
                                 animate={{ opacity: 1, y: 0, scale: 1, x: "-50%" }}
-                                exit={{ opacity: 0, y: 10, scale: 0.95, x: "-50%" }}
-                                className="absolute bottom-[calc(100%+12px)] left-1/2 z-50 pointer-events-none"
+                                exit={{ opacity: 0, y: flipDown ? -10 : 10, scale: 0.95, x: "-50%" }}
+                                className={cn(
+                                    "absolute left-1/2 z-50 pointer-events-none",
+                                    flipDown ? "top-[calc(100%+12px)]" : "bottom-[calc(100%+12px)]"
+                                )}
                             >
                                 <div className="relative w-[320px] bg-neutral-950/95 dark:bg-neutral-50/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl pt-2 px-4 pb-4 md:pt-3 md:px-5 md:pb-5 space-y-3 border border-white/10 dark:border-black/5">
                                     {/* Tail to node */}
-                                    <div className="absolute top-[calc(100%-8px)] left-1/2 -translate-x-1/2 w-4 h-4 bg-neutral-950/95 dark:bg-neutral-50/95 border-r border-b border-white/10 dark:border-black/5 rotate-45 -z-10" />
+                                    <div className={cn(
+                                        "absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-neutral-950/95 dark:bg-neutral-50/95 rotate-45 -z-10",
+                                        flipDown
+                                            ? "bottom-[calc(100%-8px)] border-l border-t border-white/10 dark:border-black/5"
+                                            : "top-[calc(100%-8px)] border-r border-b border-white/10 dark:border-black/5"
+                                    )} />
                                     <div className="space-y-1">
                                         <h4 className="text-neutral-100 dark:text-neutral-900 font-bold text-lg leading-tight">{node.label}</h4>
                                         <p className="text-neutral-400 dark:text-neutral-500 text-sm leading-relaxed">
