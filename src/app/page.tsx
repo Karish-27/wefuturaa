@@ -128,7 +128,7 @@ export default function HomePage() {
                     ease: [0.16, 1, 0.3, 1], // Expo out for snappy yet smooth feel
                     opacity: { duration: 0.8 }
                 }}
-                className="relative overflow-x-clip will-change-transform will-change-opacity"
+                className="relative overflow-x-clip overflow-y-visible will-change-transform will-change-opacity"
             >
                 {/* 
                    Hero di-mount bersamaan dengan LoadingScreen agar "nyambung".
@@ -142,9 +142,9 @@ export default function HomePage() {
                         <AboutSection />
                         <InnovativeExperienceHero
                             type="journey"
-                            title="Crafting Experiences"
-                            highlight="That Matter"
-                            description="From internships to leadership roles, each step has been a lesson in collaboration, innovation, and pushing boundaries."
+                            title="Explore The Industries"
+                            highlight="We've Served"
+                            description="Delivering innovative digital solutions across multiple industries with proven expertise and modern technologies."
                         />
                         <MetricCTAHijack />
                         <SocialCorner className="fixed bottom-12 right-12 z-[30]" />

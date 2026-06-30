@@ -33,7 +33,7 @@ const showcaseMembers = [
         role: "Full Stack Developer",
         description: exp.description,
         period: "August 2025 - Present",
-        image: "/journey/researchassistant2.jpg",
+        image: "/journey/jimmy.jpg",
         social: exp.externalLink ? { website: exp.externalLink } : undefined
     })),
     // 2. HUMIC Engineering
@@ -43,7 +43,7 @@ const showcaseMembers = [
         role: "Lead Designer & Client Success",
         description: exp.description,
         period: "September 2025 - December 2025",
-        image: "/journey/aideveloperintern1.jpg",
+        image: "/journey/krutik.jpg",
         social: exp.externalLink ? { website: exp.externalLink } : undefined
     })),
     // 3. Informatics Laboratory, Telkom University
@@ -53,7 +53,7 @@ const showcaseMembers = [
         role: "Lead Full Stack Developer",
         description: exp.description,
         period: "September 2025 - January 2026",
-        image: "/journey/computernetworkpracticumassistant2.jpg",
+        image: "/journey/kariee.jpg",
         social: exp.externalLink ? { website: exp.externalLink } : undefined
     })),
     // 4. Digistar Club by Telkom Indonesia

@@ -50,7 +50,7 @@ const pages = [
     rightContent: {
       heading: "MOBILE DEVELOPMENT",
       description:
-        "Translating complex technical requirements into impactful business solutions through systemic thinking, strategic leadership, and clear communication within cross-functional teams.",
+        "Developing high-performance mobile apps that deliver seamless experiences across platforms with scalable architecture and production-ready deployments.",
       skills: ["ANDROID", "REACT NATIVE", "iOS"],
       hoverColor: "bg-purple-600/10",
     },
