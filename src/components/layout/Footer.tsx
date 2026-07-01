@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect, Fragment } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
@@ -27,6 +27,7 @@ import {
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { portfolioData } from '@/data/portfolio';
+import { FaDribbble, FaBehance } from 'react-icons/fa';
 
 type SocialIconComponent = typeof Github;
 
@@ -212,61 +213,31 @@ export function Footer() {
                             {/* Right Side - Socials & More Button */}
                             <div className="flex items-center justify-end gap-4 md:gap-8 z-10 ml-auto">
                                 <div className="flex items-center gap-1.5 sm:gap-2">
-                                    {/* Social Icons */}
-                                    {previewSocials.map((social: SocialLink) => {
-                                        const Icon = socialIcons[social.icon];
-                                        return (
-                                            <Fragment key={social.platform}>
-                                                {social.platform === 'Twitter' && (
-                                                    <motion.a
-                                                        href="https://arfazrllworkspace.vercel.app/"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="p-1.5 rounded-full hover:bg-foreground/5 transition-all text-muted-foreground hover:text-foreground hover:scale-110 active:scale-95"
-                                                        aria-label="Workspace"
-                                                    >
-                                                        <Focus className="w-4 h-4" />
-                                                    </motion.a>
-                                                )}
-                                                <motion.a
-                                                    key={social.platform}
-                                                    href={social.platform === 'Twitter' ? undefined : social.url}
-                                                    onClick={social.platform === 'Twitter' ? (e) => {
-                                                        e.preventDefault();
-                                                        window.dispatchEvent(new CustomEvent('portfolio:toggle-chatbot'));
-                                                    } : undefined}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="p-1.5 rounded-full hover:bg-foreground/5 transition-all text-muted-foreground hover:text-foreground hover:scale-110 active:scale-95"
-                                                    aria-label={social.platform}
-                                                >
-                                                    {Icon && <Icon className="w-4 h-4" />}
-                                                </motion.a>
-                                            </Fragment>
-                                        );
-                                    })}
+                                    {[
+                                        { icon: <FaDribbble className="w-4 h-4" />, label: 'Dribbble', href: '#' },
+                                        { icon: <FaBehance className="w-4 h-4" />, label: 'Behance', href: '#' },
+                                    ].map(({ icon, label, href }) => (
+                                        <motion.a
+                                            key={label}
+                                            href={href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-1.5 rounded-full hover:bg-foreground/5 transition-all text-muted-foreground hover:text-foreground active:scale-95"
+                                            aria-label={label}
+                                            whileHover={{ scale: 1.1 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            {icon}
+                                        </motion.a>
+                                    ))}
+
+                                    {/* LinkedIn with all team members dropdown */}
+                                    <LinkedInDropdown />
+
+                                    {/* GitHub with role dropdown */}
+                                    <GitHubDropdown />
                                 </div>
 
-                                <motion.button
-                                    onClick={toggleExpand}
-                                    className={`
-                                            flex items-center gap-2 px-3 md:px-5 py-2 md:py-2.5 rounded-full transition-all text-xs font-black uppercase tracking-[0.2em]
-                                            ${isBlog
-                                            ? 'bg-muted/50 border-2 border-foreground/10 text-foreground hover:bg-muted hover:border-foreground/20'
-                                            : 'bg-muted hover:bg-muted/80 text-foreground'
-                                        }
-                                        `}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <span className="hidden sm:inline">{t('more')}</span>
-                                    <motion.span
-                                        animate={{ rotate: isExpanded ? 180 : 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <ChevronUp className="w-4 h-4" />
-                                    </motion.span>
-                                </motion.button>
                             </div>
                         </div>
                     </div>
@@ -545,6 +516,129 @@ function AboutHoverMenu({ tNav, onExpandChange }: { tNav: (key: string) => strin
     );
 }
 
+const linkedInMembers = [
+    { name: 'Prem Parmar', role: 'Full Stack Developer', image: '/journey/jimmy.jpg', href: '#' },
+    { name: 'Krutik Parmar', role: 'Lead Designer & Client Success', image: '/journey/krutik.jpg', href: '#' },
+    { name: 'Karishma Kumavat', role: 'Lead Full Stack Developer', image: '/journey/kariee.jpg', href: '#' },
+    { name: 'Priya Sahani', role: 'Quality Assurance Engineer', image: '/journey/chiefcommittee1.jpg', href: '#' },
+    { name: 'Kapil Kori', role: 'Mobile Application Developer', image: '/journey/dataentryassistant1.jpg', href: '#' },
+    { name: 'Vinita Asrani', role: 'Business Development Executive', image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop', href: '#' },
+];
 
+function LinkedInDropdown() {
+    const [open, setOpen] = useState(false);
 
+    return (
+        <div
+            className="relative"
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => setOpen(false)}
+        >
+            <motion.button
+                onClick={() => setOpen(v => !v)}
+                className="p-1.5 rounded-full hover:bg-foreground/5 transition-all text-muted-foreground hover:text-foreground active:scale-95"
+                aria-label="LinkedIn"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+            >
+                <Linkedin className="w-4 h-4" />
+            </motion.button>
+
+            <AnimatePresence>
+                {open && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 6, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 6, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                        className="absolute bottom-full right-0 mb-2 min-w-[240px] bg-background dark:bg-zinc-900 border border-border rounded-xl shadow-xl overflow-hidden z-50"
+                    >
+                        {linkedInMembers.map(({ name, role, image, href }, i) => (
+                            <motion.a
+                                key={name}
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                initial={{ opacity: 0, x: -8 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.04, duration: 0.2 }}
+                                className="flex items-center gap-3 px-4 py-2.5 hover:bg-foreground/5 transition-colors group"
+                            >
+                                <img
+                                    src={image}
+                                    alt={name}
+                                    className="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-border"
+                                />
+                                <div className="flex flex-col min-w-0">
+                                    <span className="text-xs font-semibold text-foreground truncate">{name}</span>
+                                    <span className="text-[10px] text-muted-foreground truncate">{role}</span>
+                                </div>
+                            </motion.a>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
+
+const githubRoles = [
+    { label: 'Android', role: 'Mobile Application Developer', image: '/journey/dataentryassistant1.jpg', href: '#' },
+    { label: 'Lead Full Stack Developer', role: 'Lead Full Stack Developer', image: '/journey/kariee.jpg', href: '#' },
+    { label: 'Junior Full Stack Developer', role: 'Full Stack Developer', image: '/journey/jimmy.jpg', href: '#' },
+];
+
+function GitHubDropdown() {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div
+            className="relative"
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => setOpen(false)}
+        >
+            <motion.button
+                onClick={() => setOpen(v => !v)}
+                className="p-1.5 rounded-full hover:bg-foreground/5 transition-all text-muted-foreground hover:text-foreground active:scale-95"
+                aria-label="GitHub"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+            >
+                <Github className="w-4 h-4" />
+            </motion.button>
+
+            <AnimatePresence>
+                {open && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 6, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 6, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                        className="absolute bottom-full right-0 mb-2 min-w-[220px] bg-background dark:bg-zinc-900 border border-border rounded-xl shadow-xl overflow-hidden z-50"
+                    >
+                        {githubRoles.map(({ label, image, href }, i) => (
+                            <motion.a
+                                key={label}
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                initial={{ opacity: 0, x: -8 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.05, duration: 0.2 }}
+                                className="flex items-center gap-3 px-4 py-2.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-colors"
+                            >
+                                <img
+                                    src={image}
+                                    alt={label}
+                                    className="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-border"
+                                />
+                                {label}
+                            </motion.a>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
 

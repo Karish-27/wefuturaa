@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useTranslations } from 'next-intl';
 import { Mail, Layers } from "lucide-react";
 import { InfiniteRibbon } from "@/components/ui/infinite-ribbon";
+import { useLenis } from "lenis/react";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -15,6 +16,7 @@ if (typeof window !== "undefined") {
 export default function CTASection() {
     const sectionRef = useRef<HTMLElement>(null);
     const t = useTranslations('ctaSection');
+    const lenis = useLenis();
     const words = [t('words.amazing'), t('words.innovative'), t('words.intelligent'), t('words.creative')];
     const [currentWord, setCurrentWord] = useState(0);
 
@@ -97,10 +99,26 @@ export default function CTASection() {
                         </Link>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Link href="/resume" className="btn-outline-creative text-lg px-10 py-5 inline-flex items-center gap-3">
+                        <button
+                            onClick={() => {
+                                const container = document.getElementById('work');
+                                if (!container) return;
+                                // BridgeSlide is fully visible at ~82–98% of scroll progress; 0.87 centers on that frame
+                                const targetY = container.offsetTop + container.offsetHeight * 0.87;
+                                if (lenis) {
+                                    lenis.scrollTo(targetY, {
+                                        duration: 2.2,
+                                        easing: (t: number) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+                                    });
+                                } else {
+                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                                }
+                            }}
+                            className="btn-outline-creative text-lg px-10 py-5 inline-flex items-center gap-3"
+                        >
                             <Layers className="w-5 h-5" />
                             <span>{t('work')}</span>
-                        </Link>
+                        </button>
                     </motion.div>
                 </div>
             </div>

@@ -123,31 +123,19 @@ function ContactForm() {
     const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('loading');
 
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+        const to = 'wefuturaa@gmail.com';
+        const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
 
-            if (response.ok) {
-                setStatus('success');
-                setFormData({ name: '', email: '', subject: '', message: '' });
-            } else {
-                setStatus('error');
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            setStatus('error');
-        } finally {
-            setTimeout(() => setStatus('idle'), 3000);
-        }
+        window.open(gmailUrl, '_blank');
+
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setStatus('idle'), 3000);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

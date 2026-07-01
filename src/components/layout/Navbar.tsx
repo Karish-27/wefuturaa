@@ -181,20 +181,6 @@ export function Navbar() {
 
                         {/* Controls */}
                         <div className="flex items-center gap-2 md:gap-3">
-<motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={toggleLocale}
-                                className="p-2 md:p-2.5 rounded-full bg-muted/80 hover:bg-muted transition-colors"
-                                aria-label="Toggle language"
-                            >
-                                <Globe className="w-4 h-4" />
-                            </motion.button>
-
-                            {mounted && (
-                                <AnimatedThemeToggler />
-                            )}
-
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -280,25 +266,6 @@ export function Navbar() {
                                     ))}
                                 </nav>
 
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 20 }}
-                                    transition={{ delay: 0.5 }}
-                                    className="flex items-center gap-4 mt-12"
-                                >
-                                    <button
-                                        onClick={toggleLocale}
-                                        className="px-6 py-3 rounded-full glass-card text-sm font-medium hover:bg-muted/50 transition-colors"
-                                    >
-                                        {currentLocale === 'en' ? 'English' : 'Indonesia'}
-                                    </button>
-                                    {mounted && (
-                                        <AnimatedThemeToggler
-                                            className="px-6 py-6 glass-card text-sm font-medium hover:bg-muted/50 flex items-center gap-2"
-                                        />
-                                    )}
-                                </motion.div>
                             </div>
                         </motion.div >
                     )

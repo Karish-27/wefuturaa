@@ -109,8 +109,10 @@ export default function ScrollAdventure() {
     <div
       id="work"
       ref={containerRef}
-      className="relative h-[800vh] w-full pointer-events-none"
+      className="relative h-[400vh] w-full pointer-events-none"
     >
+      {/* Marker at 75% = start of bridge slide */}
+      <div id="work-bridge" className="absolute top-[75%] w-0 h-0 pointer-events-none" />
       <motion.div
         style={{
           scale: enterScale,

@@ -398,17 +398,17 @@
     "ctaSection": {
         "title": "Let's Build Something",
         "together": "Together",
-        "subtitle": "Open to strategic collaborations in AI driven systems and scalable full Stack Engineering. Let’s transform ambitious ideas into production ready solutions.",
-        "start": "Hire Me",
-        "work": "View My Resume",
+        "subtitle": "Trusted since 2019, we help startups and businesses turn ambitious ideas into reliable digital productsthrough design, engineering, and AI.",
+        "start": "Let's Talk",
+        "work": "Explore our Work",
         "words": {
             "amazing": "Amazing",
             "innovative": "Innovative",
             "intelligent": "Intelligent",
             "creative": "Creative"
         },
-        "ribbon1": "Next.js • TypeScript • Tailwind • React • Node.js • Three.js •",
-        "ribbon2": "Creative Developer • UI/UX Design • Full Stack Engineering • System Architecture •"
+        "ribbon1": "Web Development • Mobile Apps • UI/UX Design • SaaS Products • AI Solutions • Digital Experiences •",
+        "ribbon2": "Built for Startups • Trusted by Businesses • Scalable Solutions • Pixel-Perfect Quality • On-Time Delivery •"
     },
     "stats": {
         "systemStatus": "System Status: Analytics Active",
